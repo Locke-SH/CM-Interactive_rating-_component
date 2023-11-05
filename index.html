@@ -1,49 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive rating component</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Interactive rating component</title>
+
 </head>
+
 <body>
+  <main>
+    <section class="card-container">
+      <div class="rate" id="blog1">
+        <div class="star-icon">
+          <img src="../images/icon-star.svg" alt="star-icon"></img>
+        </div>
+        <h2>How did we do?</h2>
 
-  <!-- Rating state start -->
+        <p>Please let us know how we did with your support request. All feedback is appreciated
+          to help us improve our offering!</p>
 
-  How did we do?
+        <div class="ratings">
+          <span id="rate1">1</span>
+          <span id="rate2">2</span>
+          <span id="rate3">3</span>
+          <span id="rate4">4</span>
+          <span id="rate5">5</span>
+        </div>
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+        <button id="button" class="submit-btn">SUBMIT</button>
+      </div>
+      <div class="submitted" id="blog2">
+        <img class="thanks_img" src="./images/illustration-thank-you.svg" alt="thank_you_illustration">
+        <p class="selection_text">You selected <span id="selected_rating"></span> out of 5</p>
 
-  1 2 3 4 5
+        <h1 class="submitted_headline">Thank you!</h1>
 
-  Submit
+        <p class="text-box">We appreciate you taking the time to give a rating. If you ever need more support,
+          don’t hesitate to get in touch!</p>
+      </div>
+    </section>
 
-  <!-- Rating state end -->
 
-  <!-- Thank you state start -->
+    </section>
+  </main>
 
-  You selected <!-- Add rating here --> out of 5
+  <script>
+    let rate1 = document.getElementById("rate1");
+    let rate2 = document.getElementById("rate2");
+    let rate3 = document.getElementById("rate3");
+    let rate4 = document.getElementById("rate4");
+    let rate5 = document.getElementById("rate5");
 
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  <!-- Thank you state end -->
-
+    rate1.addEventListener("click", ()=>{document.getElementById("selected_rating").innerHTML= "1";});
+    rate1.addEventListener("click", ()=>{rate1.style.background= "var(--clr-primary-orange)"});
+    rate2.addEventListener("click", ()=>{document.getElementById("selected_rating").innerHTML= "2";});
+    rate2.addEventListener("click", ()=>{rate2.style.background= "var(--clr-primary-orange)"});
+    rate3.addEventListener("click", ()=>{document.getElementById("selected_rating").innerHTML= "3";});
+    rate3.addEventListener("click", ()=>{rate3.style.background= "var(--clr-primary-orange)"});
+    rate4.addEventListener("click", ()=>{document.getElementById("selected_rating").innerHTML= "4";});
+    rate4.addEventListener("click", ()=>{rate4.style.background= "var(--clr-primary-orange)"});
+    rate5.addEventListener("click", ()=>{document.getElementById("selected_rating").innerHTML= "5";});
+    rate5.addEventListener("click", ()=>{rate5.style.background= "var(--clr-primary-orange)"});
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  
+  
+  
+    let blog1 = document.getElementById("blog1");
+    let blog2 = document.getElementById("blog2");
+    let button = document.getElementById("button");
+
+    button.addEventListener("click", ()=>{blog1.style.display= "none"; blog2.style.display="flex"});
+    
+
+  </script>
 </body>
+
 </html>
